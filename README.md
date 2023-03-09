@@ -32,3 +32,5 @@ aa
 ```
 ![alt text](https://github.com/avinabneogy23/GSOC-23/blob/main/Easy%20test/index_2.png)
 
+The rest of the code for the easy test can be found the the directory <https://github.com/avinabneogy23/GSOC-23/tree/main/Easy%20test>
+
