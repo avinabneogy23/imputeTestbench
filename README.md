@@ -25,3 +25,10 @@ aa <- impute_errors(dataIn = nhtemp)
 aa
 ```
 ![alt text](https://github.com/avinabneogy23/GSOC-23/blob/main/Easy%20test/index_1.png)
+```r
+# change the simulation for missing completely at random observations
+aa <- impute_errors(dataIn = nhtemp, smps = 'mcar')
+aa
+```
+![alt text](https://github.com/avinabneogy23/GSOC-23/blob/main/Easy%20test/index_2.png)
+
