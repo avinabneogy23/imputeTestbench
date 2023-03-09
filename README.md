@@ -18,3 +18,10 @@ Install the `imputeTestbench` package using `install.packages("imputeTestbench")
 ``` r
 library(imputeTestbench)
 ```
+The dataset used is `nhtemp` which is a default datset in R.It contains **Average Yearly Temperatures** in New Haven from 1912-1971.
+
+```r
+aa <- impute_errors(dataIn = nhtemp)
+aa
+```
+![alt text](https://github.com/avinabneogy23/GSOC-23/blob/main/Easy%20test/index_1.png)
