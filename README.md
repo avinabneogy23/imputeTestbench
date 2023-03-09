@@ -34,3 +34,15 @@ aa
 
 The rest of the code for the easy test can be found the the directory <https://github.com/avinabneogy23/GSOC-23/tree/main/Easy%20test>
 
+#### Medium Test
+`imputeTestbench` is a great package for comparing various methods of imputation . This project modifies the package to work with multivariate time series data since the package currently has suppo. Few updates that I would suggest are:
+-   Introducing new sampling methods such as monte carlo.
+-   Making the package interactive.
+-   Developing a ShinyApp for the package.
+
+#### Hard Test
+For the final test, I created a R package called `billboardsongs`. It contains five functions, `find_artist()`, `random_song()`, `song_lyrics()`, `song_properties()` and `spotify_playlist_url()` , with documentation and tests. Then, using `devtools::check()`, I checked for any errors or warning, and uploaded the source file to <https://win-builder.r-project.org/>. It passed without errors/warnings/note.
+
+The result of <https://win-builder.r-project.org/> is included in the file(`00check.log`) inside the repository <https://github.com/avinabneogy23/GSOC-23/tree/main/Hard%20test>.
+
+
