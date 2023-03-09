@@ -1,0 +1,104 @@
+---
+title: "imputeTestbench"
+author: "Avinab"
+date: "2023-03-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+ImputeTestbench Package Provides a test bench for the comparison of missing data imputation 
+    methods in uni-variate time series. Imputation methods are compared using 
+    different error metrics. Proposed imputation methods and alternative error 
+    metrics can be used.
+    Following is a a demonstartion of the different functions presnt in the package using the default R dataset nhtemp( Dataset of Average Yearly Temperatures in New Haven)
+    
+    
+    impute_errors() usage
+```{r}
+library(imputeTestbench)
+aa <- impute_errors(dataIn = nhtemp)
+aa
+plot_errors(aa)
+# change the simulation for missing at random observations
+aa <- impute_errors(dataIn = nhtemp, smps = 'mar')
+aa
+plot_errors(aa)
+# change the simulation for missing completely at random observations
+aa <- impute_errors(dataIn = nhtemp, smps = 'mcar')
+aa
+plot_errors(aa,plotType = 'line')
+# use one interpolation method(interp), increase number of repetitions
+aa <- impute_errors(dataIn = nhtemp, methods = 'na.interp', repetition = 100)
+aa
+plot_errors(aa)
+# use one interpolation method(mean), increase number of repetitions
+aa <- impute_errors(dataIn = nhtemp, methods = 'na_mean', repetition = 100)
+aa
+plot_errors(aa,plotType = 'line')
+# change the error metric
+aa <- impute_errors(dataIn = nhtemp, errorParameter = 'mape')
+aa
+plot_errors(aa)
+```
+
+mae() usage
+
+```{r }
+##Generate 100 random numbers within some limits and calculate mean absolute error between original and predicted data
+a <- sample(1:15, 10, replace = TRUE)
+b <- sample(1:19, 10, replace = TRUE)
+c <- mae(a, b)
+c
+```
+
+mape() usage
+```{r}
+## Generate 100 random numbers within some limits and calculate mean percent absolute error between original and predicted data
+a <- sample(1:15, 10, replace = TRUE)
+b <- sample(1:19, 10, replace = TRUE)
+c <- mape(a, b)
+c
+```
+plot_errors() usage
+```{r}
+# bar plot of averages at each repetition
+plot_errors(aa, plotType = 'bar')
+
+#plot_impute() usage
+# default
+plot_impute(dataIn = nhtemp)
+
+# change missing percent total
+plot_impute(dataIn = nhtemp, missPercent = 10)
+
+# show missing values
+plot_impute(dataIn = nhtemp, showmiss = TRUE)
+
+# use mar sampling
+plot_impute(dataIn = nhtemp, smps = 'mar')
+```
+rmse() usage
+```{r}
+## Generate 100 random numbers within some limits and calculate Root Mean Square Error
+a <- sample(1:17, 50, replace = TRUE)
+b <- sample(1:14, 50, replace = TRUE)
+c <- rmse(a, b)
+c
+```
+sample_dat() usage
+```{r}
+a <- rnorm(50)
+
+# default sampling
+sample_dat(a)
+# use mar sampling
+sample_dat(a, smps = 'mar')
+# show a plot of one repetition
+sample_dat(a, plot = TRUE)
+# show a plot of one repetition, mar sampling
+sample_dat(a, smps = 'mar', plot = TRUE)
+```
+
