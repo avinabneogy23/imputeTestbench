@@ -1,0 +1,6 @@
+name	                user	system	elapsed
+find_artist	          0.03	0.00	0.12
+random_song	          0	    0	    0
+song_lyrics	          0.04	0.00	0.05
+song_properties	      0.03	0.00	0.03
+spotify_playlist_url	0	    0	    0

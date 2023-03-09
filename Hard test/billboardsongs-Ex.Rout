@@ -1,0 +1,325 @@
+
+R version 4.2.2 (2022-10-31 ucrt) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "billboardsongs"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> options(pager = "console")
+> base::assign(".ExTimings", "billboardsongs-Ex.timings", pos = 'CheckExEnv')
+> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
+> base::assign(".format_ptime",
+               + function(x) {
+                 +   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
+                 +   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
+                 +   options(OutDec = '.')
+                 +   format(x[1L:3L], digits = 7L)
+                 + },
+               + pos = 'CheckExEnv')
+>
+  > ### * </HEADER>
+  > library('billboardsongs')
+>
+  > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("find_artist")
+> ### * find_artist
+  >
+  > flush(stderr()); flush(stdout())
+>
+  > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: find_artist
+  > ### Title: Find the artist from the song title
+  > ### Aliases: find_artist
+  >
+  > ### ** Examples
+  >
+  > find_artist()
+The Artist for the song On My Mind is Ellie Goulding> find_artist("Adventure of a Lifetime")
+The Artist for the song Adventure of a Lifetime is Coldplay> find_artist(title="Hymn for the Weekend")
+The Artist for the song Hymn for the Weekend is Coldplay>
+  >
+  >
+  > base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("find_artist", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("random_song")
+> ### * random_song
+  >
+  > flush(stderr()); flush(stdout())
+>
+  > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: random_song
+  > ### Title: Select a random song
+  > ### Aliases: random_song
+  >
+  > ### ** Examples
+  >
+  > random_song()
+Random song by Taylor Swift: Love Story> random_song("Maroon 5")
+Random song by Maroon 5: Daylight> random_song(artist="The Beatles")
+Random song by The Beatles: I Want to Hold Your Hand>
+  >
+  >
+  > base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("random_song", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("song_lyrics")
+> ### * song_lyrics
+  >
+  > flush(stderr()); flush(stdout())
+>
+  > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: song_lyrics
+  > ### Title: Shows the lyrics for a selected song
+  > ### Aliases: song_lyrics
+  >
+  > ### ** Examples
+  >
+  > song_lyrics()
+Lyrics of The A Team by Ed Sheeran :[Verse 1]White lips, pale face
+Breathing in the snowflakes
+Burnt lungs, sour taste
+Light's gone, day's end
+Struggling to pay rent
+Long nights, strange men
+[Pre-Chorus]And they say
+She's in the Class A TeamStuck in her daydream
+Been this way since 18But lately, her face seems
+Slowly sinking, wasting
+Crumbling like pastriesAnd they scream
+The worst things in life come free to us
+[Chorus 1]'Cause she's just under the upper hand
+And go mad for a couple of gramsAnd she don't want to go outside tonightAnd in a pipe she flies to the Motherland
+Or sells love to another manIt's too cold outside
+For angels to fly
+Angels to fly
+[Verse 2]Ripped gloves, raincoatTried to swim and stay afloat
+Dry house, wet clothes
+Loose change, bank notes
+Weary-eyed, dry throatCall girl, no phone
+[Pre-Chorus]And they say
+She's in the Class A TeamStuck in her daydream
+Been this way since 18But lately, her face seems
+Slowly sinking, wasting
+Crumbling like pastriesAnd they scream
+The worst things in life come free to us
+[Chorus 1]'Cause she's just under the upper hand
+And go mad for a couple of gramsAnd she don't want to go outside tonightAnd in a pipe she flies to the Motherland
+Or sells love to another manIt's too cold outside
+For angels to fly
+[Bridge]An angel will die
+Covered in whiteClosed eyes and hopin' for a better lifeThis time, we'll fade out tonight
+Straight down the line
+[Pre-Chorus]And they say
+She's in the Class A TeamStuck in her daydream
+Been this way since 18But lately, her face seems
+Slowly sinking, wasting
+Crumbling like pastriesAnd they scream
+The worst things in life come free to us
+[Chorus 2]And we're all under the upper hand
+And go mad for a couple of grams
+And we don't want to go outside tonightAnd in a pipe she flies to the Motherland
+Or sells love to another manIt's too cold outside
+For angels to fly
+Angels to fly
+Fly, fly
+For angels to fly
+To fly, to flyFor angels to die> song_lyrics("Let Me Love You")
+Lyrics of Let Me Love You by Mario :[Intro - Mario]
+Mmmm ..... Mmmmm.... Yeah....Mmmmm....Yeah, Yeah, Yeah
+Mmmm...Yeah....Mmmm..... Yeah, Yeah
+[Verse 1: Mario]
+Baby I just don't get it, do you enjoy being hurt?
+I know you smelled the perfume, the make-up on his shirt
+You don't believe his stories, you know that they're all lies
+Bad as you are, you stick around and I just don't know why
+[Pre-Refrain: Mario]
+If I was ya man baby you'd
+Never worry bout what I do
+I'd be coming home back to you
+Every night, doing you right
+You're the type of woman deserves good things
+Fistful of diamonds hand full of rings
+Baby you're a star, I just want to show you, you are
+[Refrain: Mario]
+You should let me love you
+Let me be the one to
+Give you everything you want and need
+Baby, good love and protection
+Make me your selection
+Show you the way love's supposed to be
+Baby, you should let me love you, love you, love you
+Love you
+Yeah, Listen
+[Verse 2: Mario]Your true beauty’s description; look so good that it hurtsYou're a dime plus 99 and it's a shame, don't even know what you're worth
+Everywhere you go, they stop and stare, cause you're bad and it shows
+From your head to your toes, out of control baby you know
+[Pre-Refrain: Mario]
+If I was ya man baby you'd
+Never worry bout what I do
+I'd be coming home back to you
+Every night, doing you right
+You're the type of woman deserves good things
+Fistful of diamonds hand full of rings
+Baby you're a star, I just want to show you, you are
+[Refrain: Mario]
+You should let me love you
+Let me be the one to
+Give you everything you want and need
+Baby, good love and protection
+Make me your selection
+Show you the way love's supposed to be
+Baby, you should let me
+[Bridge: Mario]
+You deserve better girl (You know you deserve better)
+We should be together girl (Baby)
+With me and you it's whatever girl, hey
+So can we make this thing ours?
+  [Refrain: Mario]
+You should let me love you
+Let me be the one to (Let me be the one to give)
+Give you everything you want and need (Everything you need)
+Baby, good love and protection (Said everything)
+Make me your selection (Will you take me, baby?)
+Show you the way love's supposed to be
+Baby, you should let me love you
+Let me be the one to
+Give you everything you want and need
+That good love and protection
+Make me your selection
+Show you the way love's supposed to be
+You should let me love you
+Let me be the one to give you everything you want and need (Everything you need)
+Good love and protection (protection)
+Make me your selection (selection)
+Show you the way love's supposed to be, yeah
+Let me love you, that's all you need, baby Lyrics of Let Me Love You by DJ Snake featuring Justin Bieber :NA> song_lyrics(title="Treat You Better")
+Lyrics of Treat You Better by Shawn Mendes :[Verse 1]I won't lie to you
+I know he's just not right for you
+And you can tell me if I'm off
+But I see it on your face
+When you say that he's the one that you want
+And you're spending all your time
+In this wrong situation
+And anytime you want it to stop
+[Chorus]
+I know I can treat you better than he can
+And any girl like you deserves a gentleman
+Tell me why are we wasting time
+On all your wasted crying
+When you should be with me instead
+I know I can treat you better
+Better than he can
+[Verse 2]
+I'll stop time for you
+The second you say you'd like me to
+I just wanna give you the loving that you're missing
+Baby, just to wake up with you
+Would be everything I need and this could be so different
+Tell me what you want to do
+[Chorus]
+'Cause I know I can treat you better than he can
+And any girl like you deserves a gentleman
+Tell me why are we wasting time
+On all your wasted crying
+When you should be with me instead
+I know I can treat you better
+Better than he can
+Better than he can
+[Bridge]
+Give me a sign
+Take my hand, we'll be fine
+Promise I won't let you down
+Just know that you don't
+Have to do this alone
+Promise I'll never let you down
+[Chorus]
+'Cause I know I can treat you better than he can
+And any girl like you deserves a gentleman
+Tell me why are we wasting time
+On all your wasted crime
+When you should be with me instead
+I know I can treat you better
+Better than he can
+Better than he can
+Better than he can>
+  >
+  >
+  > base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("song_lyrics", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("song_properties")
+> ### * song_properties
+  >
+  > flush(stderr()); flush(stdout())
+>
+  > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: song_properties
+  > ### Title: Gives properties of a song like Danceability and Energy
+  > ### Aliases: song_properties
+  >
+  > ### ** Examples
+  >
+  > song_properties()
+Danceability and Energy of Drive By are 0.765 and 0.837> song_properties("Drive By")
+Danceability and Energy of Drive By are 0.765 and 0.837> song_properties(track_name="The Nights")
+Danceability and Energy of The Nights are 0.528 and 0.852>
+  >
+  >
+  > base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("song_properties", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("spotify_playlist_url")
+> ### * spotify_playlist_url
+  >
+  > flush(stderr()); flush(stdout())
+>
+  > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: spotify_playlist_url
+  > ### Title: Gives Billboard Year End Hot Singles Spotify playlist link for a
+  > ###   particular year
+  > ### Aliases: spotify_playlist_url
+  >
+  > ### ** Examples
+  >
+  > spotify_playlist_url()
+Spotify playlist url for 2000 is  https://open.spotify.com/playlist/4sgfHKNUvjabf82DgycNld> spotify_playlist_url("2010")
+Spotify playlist url for 2010 is  https://open.spotify.com/playlist/0JnJKrKjU6BHVm8D2AyLvm> spotify_playlist_url(year = "2015")
+Spotify playlist url for 2015 is  https://open.spotify.com/playlist/2Ct11iXczMd4Z4ejZGYWUN>
+  >
+  >
+  >
+  > base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("spotify_playlist_url", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> ### * <FOOTER>
+  > ###
+  > cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.33 0 0.42 NA NA
+> grDevices::dev.off()
+null device
+1
+> ###
+  > ### Local variables: ***
+  > ### mode: outline-minor ***
+  > ### outline-regexp: "\\(> \\)?### [*]+" ***
+  > ### End: ***
+  > quit('no')
