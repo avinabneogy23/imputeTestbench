@@ -42,10 +42,35 @@ The rest of the code for the easy test can be found the the directory <https://g
 
 #### Medium Test
 `imputeTestbench` is a great package for comparing various methods of imputation . This project modifies the package to work with multivariate time series data since the package currently has support for univariate time series data only. Few updates that I would suggest are:
--   Introducing new sampling methods such as monte carlo method.
--   Introduce some datasets in the package which will have more recent time series data. 
--   Add more impuatation methods in the impute_errors() function
--   Developing a ShinyApp for the package to make the package more interactive.
+
+1. Multivariate Prototype Implementation
+Develop a basic extension of impute_errors() to handle multivariate time series data:
+
+- Create functions to generate missing patterns across multiple variables
+
+- Implement correlation-aware evaluation metrics between variables
+
+- Provide simple visualization showing imputation across multiple series simultaneously
+
+
+2. Performance Enhancement with data.table
+Implement a performance improvement using modern data structures:
+
+- Convert key internal operations to use data.table for efficient processing
+
+- Add basic parallelization using future or foreach for method evaluation
+
+- Benchmark performance gains on datasets of increasing size
+
+
+3. Integration with State-of-the-Art Imputation Methods
+Create a prototype that connects to modern imputation approaches:
+
+- Implement a wrapper for accessing external ML-based imputation methods
+
+- Use reticulate to connect with Python libraries for specialized techniques
+
+- Compare performance against traditional methods using existing metrics
 
 
 #### Hard Test
