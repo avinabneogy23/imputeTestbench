@@ -37,7 +37,7 @@ aa
 ```
 ![alt text](https://github.com/avinabneogy23/imputeTestbench/blob/main/Easy%20test/index_3.png)
 
-The rest of the code for the easy test can be found the the ![directory](https://github.com/avinabneogy23/GSOC-23/tree/main/Easy%20test)
+The rest of the code for the easy test can be found in the ![directory](https://github.com/avinabneogy23/GSOC-23/tree/main/Easy%20test).
 
 #### Medium Test
 `imputeTestbench` is a great package for comparing various methods of imputation . This project modifies the package to work with multivariate time series data since the package currently has support for univariate time series data only. Few updates that I would suggest are:
