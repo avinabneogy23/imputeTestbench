@@ -43,7 +43,7 @@ The rest of the code for the easy test can be found in the ![directory](https://
 `imputeTestbench` is a great package for comparing various methods of imputation . This project modifies the package to work with multivariate time series data since the package currently has support for univariate time series data only. Few updates that I would suggest are:
 
 1. Multivariate Prototype Implementation
-Develop a basic extension of impute_errors() to handle multivariate time series data:
+Develop a basic extension of `impute_errors()` to handle multivariate time series data:
 
 - Create functions to generate missing patterns across multiple variables
 
@@ -55,7 +55,7 @@ Develop a basic extension of impute_errors() to handle multivariate time series 
 2. Performance Enhancement with data.table
 Implement a performance improvement using modern data structures:
 
-- Convert key internal operations to use data.table for efficient processing
+- Convert key internal operations to use `data.table` for efficient processing
 
 - Add basic parallelization using future or foreach for method evaluation
 
